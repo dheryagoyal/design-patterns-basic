@@ -1,0 +1,26 @@
+from logger import Logger
+
+
+class ChatBot:
+
+    def __init__(self):
+        self.logger = Logger()
+
+        self.responses = {
+            "hi": "Hello!",
+            "hello": "Hi there!",
+            "how are you": "I'm doing well, thank you.",
+            "what is your name": "I'm Singleton Bot.",
+            "bye": "Goodbye!"
+        }
+
+    def get_response(self, user_input):
+
+        self.logger.log(user_input)
+
+        user_input = user_input.lower().strip()
+
+        return self.responses.get(
+            user_input,
+            "Sorry, I don't understand that."
+        )
