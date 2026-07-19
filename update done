@@ -1,26 +1,30 @@
+from chatbot import ChatBot
 from logger import Logger
 
 
-class ChatBot:
+def main():
 
-    def __init__(self):
-        self.logger = Logger()
+    bot = ChatBot()
 
-        self.responses = {
-            "hi": "Hello!",
-            "hello": "Hi there!",
-            "how are you": "I'm doing well, thank you.",
-            "what is your name": "I'm Singleton Bot.",
-            "bye": "Goodbye!"
-        }
+    logger1 = Logger()
+    logger2 = Logger()
 
-    def get_response(self, user_input):
+    print("Singleton Demonstration:")
+    print(logger1 is logger2)
+    print()
 
-        self.logger.log(user_input)
+    print("Type 'exit' to quit.")
 
-        user_input = user_input.lower().strip()
+    while True:
 
-        return self.responses.get(
-            user_input,
-            "Sorry, I don't understand that."
-        )
+        user = input("You: ")
+
+        if user.lower() == "exit":
+            print("Bot: Goodbye!")
+            break
+
+        print("Bot:", bot.get_response(user))
+
+
+if __name__ == "__main__":
+    main()
