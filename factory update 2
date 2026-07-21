@@ -1,0 +1,25 @@
+from responders import (
+    GreetingResponder,
+    NameResponder,
+    GoodbyeResponder,
+    DefaultResponder
+)
+
+
+class ResponseFactory:
+
+    @staticmethod
+    def create(user_input):
+
+        user_input = user_input.lower().strip()
+
+        if user_input in ["hi", "hello"]:
+            return GreetingResponder()
+
+        elif user_input == "what is your name":
+            return NameResponder()
+
+        elif user_input == "bye":
+            return GoodbyeResponder()
+
+        return DefaultResponder()
