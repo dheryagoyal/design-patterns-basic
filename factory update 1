@@ -1,0 +1,22 @@
+class GreetingResponder:
+
+    def respond(self):
+        return "Hello!"
+
+
+class NameResponder:
+
+    def respond(self):
+        return "I'm Singleton Bot."
+
+
+class GoodbyeResponder:
+
+    def respond(self):
+        return "Goodbye!"
+
+
+class DefaultResponder:
+
+    def respond(self):
+        return "Sorry, I don't understand that."
